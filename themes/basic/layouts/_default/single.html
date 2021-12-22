@@ -8,9 +8,12 @@
 
     <h1>{{ .Site.Title}}</h1>
 
-    <h2>{{ .Title }}</h2>
-    
-    {{ .Content }}
+    {{ define "main" }}
 
+      <h2>{{ .Title }}</h2>
+
+      {{ .Content }}
+
+    {{ end }}
   </body>
 </html>

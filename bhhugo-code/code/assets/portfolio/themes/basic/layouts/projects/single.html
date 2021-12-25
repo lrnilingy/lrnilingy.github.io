@@ -1,0 +1,37 @@
+<!--
+ ! Excerpted from "Build Websites with Hugo",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.pragmaticprogrammer.com/titles/bhhugo for more book information.
+-->
+{{ define "main" }}
+  <div class="project-container">
+    <section class="project-list">
+      <h2>Projects</h2>
+      <ul>
+        {{ range (where .Site.RegularPages "Type" "in" "projects") }}
+          <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </section>
+
+    <section class="project">
+      <h2>{{ .Title }}</h2>
+
+      {{ .Content }}
+
+      <img alt="{{ .Params.alt_text }}" src="{{ .Params.image }}">
+
+      <h2>Tech used</h2>
+      <ul>
+        {{ range .Params.tech_used }}
+          <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+
+    </section>
+
+  </div>
+{{ end }}

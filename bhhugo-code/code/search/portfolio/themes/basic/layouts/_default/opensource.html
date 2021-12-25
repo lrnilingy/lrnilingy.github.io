@@ -1,0 +1,25 @@
+<!--
+ ! Excerpted from "Build Websites with Hugo",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.pragmaticprogrammer.com/titles/bhhugo for more book information.
+-->
+{{ define "main" }}
+  <h2>{{ .Title }}</h2>
+
+  {{ .Content }}
+  {{ $url := printf "https://api.github.com/users/%s/repos" .Params.github_username }}
+  {{ $repos := getJSON $url }}
+
+  <section class="oss">
+    {{ range $repos }}
+      <article>
+        <h3><a href="{{ .url }}">{{ .name }}</a></h3>
+        <p>{{ .description }}</p>
+      </article>
+    {{ end }}
+  </section>
+
+{{ end }}

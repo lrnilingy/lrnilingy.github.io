@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "My portfolio",
+  "scripts": {
+    "build": "npm-run-all webpack hugo-build",
+    "hugo-build": "hugo --cleanDestinationDir",
+    "webpack": "webpack",
+    "webpack-watch": "webpack --watch",
+    "dev": "npm-run-all webpack --parallel webpack-watch hugo-server",
+    "hugo-deploy": "hugo deploy",
+    "deploy": "npm-run-all build hugo-deploy"
+  },
+  "author": "Brian P. Hogan <brianhogan@example.com>",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "axios": "^0.19.0",
+    "lunr": "^2.3.8",
+    "vue": "^2.6.10"
+  }
+}

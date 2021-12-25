@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>http://example.org/</loc><priority>0</priority></url><url><loc>http://example.org/categories/</loc><priority>0</priority></url><url><loc>http://example.org/tags/</loc><priority>0</priority></url></urlset>
+<!--
+ ! Excerpted from "Build Websites with Hugo",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.pragmaticprogrammer.com/titles/bhhugo for more book information.
+-->
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>http://example.org/</loc><priority>0</priority></url><url><loc>http://example.org/categories/</loc><priority>0</priority></url><url><loc>http://example.org/tags/</loc><priority>0</priority></url></urlset>

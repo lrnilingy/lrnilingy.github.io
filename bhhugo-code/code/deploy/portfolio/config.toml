@@ -1,0 +1,32 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Brian's Portfolio"
+theme = "basic"
+disqusShortname = "pphugodemo"
+
+[params]
+  author = "Brian Hogan"
+  description = "My portfolio site"
+  gh_url = "https://api.github.com/users"
+  gh_user = ""
+
+[permalinks]
+  posts = "posts/:year/:month/:slug/"
+  year = "/posts/:slug/"
+  month = "/posts/:slug/"
+
+[taxonomies]
+  year = "year"
+  month = "month"
+  tag = "tags"
+  category = "categories"
+
+[deployment]
+
+  [[deployment.targets]]
+  name = "prod"
+  URL = "s3://bph-pp-hugoprod?region=us-east-1"
+
+  [[deployment.matchers]]
+  pattern = "^.+\\.(html|xml|js|css)$"
+  gzip = true

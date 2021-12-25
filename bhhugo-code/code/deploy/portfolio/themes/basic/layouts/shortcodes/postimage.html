@@ -1,0 +1,21 @@
+<!--
+ ! Excerpted from "Build Websites with Hugo",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.pragmaticprogrammer.com/titles/bhhugo for more book information.
+-->
+{{ $image := $.Page.Resources.GetMatch (.Get 0)}}
+{{ $smallImage := $image.Resize "1024x" }}
+
+<figure class="post-figure">
+  <a href="{{ $image.RelPermalink }}">
+    {{ with $smallImage }}
+    <img src="{{ .RelPermalink }}"
+         width="{{ .Width }}" height="{{ .Height }}"
+         alt="{{ $.Get 1 }}" />
+    {{ end }}
+  </a>
+  <figcaption>{{ .Get 1 }}</figcaption>
+</figure>

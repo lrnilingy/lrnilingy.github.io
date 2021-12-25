@@ -1,0 +1,42 @@
+<!--
+ ! Excerpted from "Build Websites with Hugo",
+ ! published by The Pragmatic Bookshelf.
+ ! Copyrights apply to this code. It may not be used to create training material,
+ ! courses, books, articles, and the like. Contact us if you are in doubt.
+ ! We make no guarantees that this code is fit for any purpose.
+ ! Visit http://www.pragmaticprogrammer.com/titles/bhhugo for more book information.
+-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+  {{- if .Page.IsHome -}}
+    {{ .Site.Title }}
+  {{- else -}}
+    {{ .Title }} – {{ .Site.Title }}
+  {{- end -}}
+  </title>
+  <meta name="author" content="{{ .Site.Params.author }}">
+  <meta name="description" content="
+    {{- with .Page.Description -}}
+      {{ . }}
+    {{- else -}}
+      {{ .Site.Params.description }}
+    {{- end -}}">
+
+  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+
+  {{ range .AlternativeOutputFormats -}}
+    {{- $link := `<link rel="%s" type="%s" href="%s" title="%s">` -}}
+    {{- $title := printf "%s - %s" $.Page.Title $.Site.Title -}}
+
+    {{- if $.Page.IsHome -}}
+      {{ $title = $.Site.Title }}
+    {{- end -}}
+
+    {{ printf $link .Rel .MediaType.Type .Permalink $title | safeHTML }}
+  {{- end }}
+
+  {{ template "_internal/google_analytics_async.html" . }}
+
+</head>

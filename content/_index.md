@@ -1,7 +1,7 @@
-This is my portfolio.
+This is my experimental portfolio.
 
-On this site, you'll find
-
-* My biography
-* My projects
-* My résumé
+On this site, some notes or diaries are kept:
+* data science
+* bayesian inference
+* petroleum engineering
+* any other business
